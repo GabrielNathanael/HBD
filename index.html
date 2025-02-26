@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday!</title>
+    <!-- Google Fonts -->
+    <link
+  href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:wght@300;400&family=Pacifico&display=swap"
+
+     
+    />
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body Styling */
+      body {
+        font-family: "Roboto", sans-serif;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+        background-size: 300% 300%;
+        animation: gradientAnimation 10s infinite;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      /* Gradient Animation */
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Main Container */
+      .container {
+        text-align: center;
+        max-width: 90%;
+        padding: 20px;
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+      }
+
+      /* Profile Picture */
+     /* Profile Picture */
+.profile-img {
+  border-radius: 50%;       /* Membuat foto menjadi lingkaran */
+  width: 200px;             /* Lebar gambar yang lebih besar */
+  height: 200px;            /* Tinggi gambar sama dengan lebar agar berbentuk lingkaran */
+  margin-bottom: 20px;      /* Jarak antara gambar dan teks di bawahnya */
+  border: 3px solid #fff;   /* Memberikan border putih */
+  object-fit: cover;        /* Memastikan gambar mengisi area dengan baik */
+}
+
+
+      /* Title Styling */
+      h1 {
+        font-family: "Dancing Script", cursive;
+        font-size: 3rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #ff6f61; /* Warna solid untuk teks */
+      }
+
+      /* Subtitle Styling */
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+
+      /* Button Styling */
+      .btn {
+        margin-top: 10px; /* Menambahkan jarak vertikal ke atas tombol */
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: #fff;
+        background: #ff6f61;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: transform 0.3s ease, background 0.3s ease;
+      }
+
+      .btn:hover {
+        transform: scale(1.1);
+        background: #ff3b2f;
+      }
+
+      /* Modal Styling */
+      .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.9);
+        color: #333;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+        z-index: 1000;
+      }
+
+      .modal.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .modal p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+      }
+
+      .modal .close-btn {
+        display: inline-block;
+        padding: 5px 10px;
+        background: #ff6f61;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .modal .close-btn:hover {
+        background: #ff3b2f;
+      }
+
+      /* Gradient Text Animation */
+      @keyframes textGradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      
+      .name {
+  font-family: 'Pacifico', cursive; /* Ganti Montserrat dengan Pacifico */
+  font-size: 2rem;
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1.5s ease;
+}
+
+      @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+    </style>
+  </head>
+  <body>
+    <!-- Main Content -->
+    <div class="container">
+      <img src="profile.jpg" alt="Your Crush" class="profile-img" />
+      <h1>Happy Birthday!</h1>
+      <h2 class="name">DEVITA</h2>
+      <button class="btn" id="surpriseBtn">Click Here!</button>
+    </div>
+
+    <!-- Modal Popup -->
+    <div class="modal" id="modal">
+      <h2>🎉 Surprise! 🎉</h2>
+      <p>
+        I hope your day is as bright and colorful as you are. Wishing you
+        endless joy, laughter, and all the happiness in the world!
+      </p>
+      <button class="close-btn" id="closeModal">Close</button>
+    </div>
+
+    <!-- Elemen Audio -->
+    <audio id="birthdayAudio" src="birthday.mp3" preload="auto"></audio>
+
+    <!-- Fireworks.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js/dist/fireworks.min.js"></script>
+    <div
+      id="fireworks-container"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      "
+    ></div>
+
+    <!-- JavaScript -->
+    <script>
+      // Modal Elements
+      const modal = document.getElementById("modal");
+      const surpriseBtn = document.getElementById("surpriseBtn");
+      const closeModalBtn = document.getElementById("closeModal");
+
+      // Fireworks Setup
+      const fireworksContainer = document.getElementById("fireworks-container");
+      const fireworks = new Fireworks(fireworksContainer, {
+        speed: 4,
+        acceleration: 1.05,
+        friction: 0.97,
+        gravity: 1.5,
+        particles: 50,
+        trace: 3,
+        explosion: 5,
+        autoresize: true,
+      });
+
+      // Elemen Audio
+      const birthdayAudio = document.getElementById("birthdayAudio");
+
+      // Show Modal, Trigger Fireworks dan Putar Audio
+      surpriseBtn.addEventListener("click", () => {
+        modal.classList.add("active");
+        fireworks.start();
+        birthdayAudio.play();
+      });
+
+      // Close Modal, Hentikan Fireworks dan Reset Audio
+      closeModalBtn.addEventListener("click", () => {
+        modal.classList.remove("active");
+        fireworks.stop();
+        birthdayAudio.pause();
+        birthdayAudio.currentTime = 0;
+      });
+    </script>
+  </body>
+</html>
